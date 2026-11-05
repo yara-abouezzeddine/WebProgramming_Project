@@ -2,11 +2,14 @@
 const express = require('express');
 const pool = require('./db/connection');
 const usersRoutes = require('./routes/users.routes');
+const trainersRoutes = require('./routes/trainers.routes');
 const app = express();
 
 app.use(express.json());
 
 app.use('/users', usersRoutes);
+app.use('/trainers',trainersRoutes );
+
 
 app.get('/', (req, res) => {
     res.send('Gym Management API is running!');
